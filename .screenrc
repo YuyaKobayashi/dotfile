@@ -1,0 +1,32 @@
+escape ^Tt
+
+# key bind
+bind ' ' windows
+bind c number
+
+## window session
+bind n	screen
+bind ^n	screen
+bind {	prev
+bind }	next
+bind ^{	prev
+bind ^}	next
+
+## split
+bind ^| split -v 
+bind [ focus prev
+bind ] focus next
+bind ^[ focus prev
+bind ^] focus next
+bind x remove
+bind ^x remove
+
+## copy
+bind v copy
+bind ^v copy
+bind p paste .
+bind ^p paste .
+
+## misc
+bind s select
+bind ^s select
