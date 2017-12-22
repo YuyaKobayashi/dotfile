@@ -52,7 +52,7 @@ autocmd FileType python set expandtab
 "TODO: modify with seeing (https://qiita.com/delphinus/items/00ff2c0ba972c6e41542)
 
 " If dein is not installed yet, install.
-if !isdirectory(expand(~/.vim/dein/repos/github.com/Shougo/dein.vim))
+if !isdirectory(expand('~/.vim/dein/repos/github.com/Shougo/dein.vim'))
 	execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
 endif
 
