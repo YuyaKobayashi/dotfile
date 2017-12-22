@@ -86,10 +86,10 @@ if has('vim_starting')
 	call dein#add('https://github.com/wesleyche/Trinity.git')
 
 	call dein#end()
-	call dein#save_state()
 
-	if dein#check_install()
-		 call dein#install()
+	call dein#save_state()
+	if and(dein#checkupdate(), dein#checkinstall())
+		call dein#update()
 	endif
 endif
 
