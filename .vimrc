@@ -53,7 +53,7 @@ autocmd FileType python set expandtab
 
 " If dein is not installed yet, install.
 if !isdirectory(expand('~/.vim/dein/repos/github.com/Shougo/dein.vim'))
-	execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+	execute '!git clone https://github.com/Shougo/dein.vim' expand('~/.vim/dein/repos/github.com/Shougo/dein.vim')
 endif
 
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim "TODO:use variable
@@ -72,7 +72,7 @@ if has('vim_starting')
 	call dein#add('Shougo/neocomplete')
 	call dein#add('Shougo/neosnippet-snippets')
 	call dein#add('yegappan/mru')
-	call dein#add('vin-scripts/grep.vim' )
+	call dein#add('vim-scripts/grep.vim' )
 	call dein#add('scrooloose/syntastic' )
 	call dein#add('junegunn/vim-easy-align' )
 	call dein#add('tpope/vim-fugitive')
@@ -80,8 +80,8 @@ if has('vim_starting')
 	"alternative command
 	call dein#add('tyru/vim-altercmd')
 
-	call dein#add('vin-scripts/The-NERD-tree')
-	call dein#add('vin-scripts/taglist.vim')
+	call dein#add('vim-scripts/The-NERD-tree')
+	call dein#add('vim-scripts/taglist.vim')
 	call dein#add('https://github.com/wesleyche/SrcExpl.git')
 	call dein#add('https://github.com/wesleyche/Trinity.git')
 
