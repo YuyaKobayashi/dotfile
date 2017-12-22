@@ -88,8 +88,8 @@ if has('vim_starting')
 	call dein#end()
 
 	call dein#save_state()
-	if and(dein#checkupdate(), dein#checkinstall())
-		call dein#update()
+	if dein#check_install()
+	   call dein#update()
 	endif
 endif
 
