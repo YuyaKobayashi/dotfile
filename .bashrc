@@ -20,17 +20,26 @@ shopt -s xpg_echo # enable echo to expand escape sequence
 
 # Initialization for git
 if [[ -n "$(command -v git))" ]]; then
-	git config --global alias.s status
-	git config --global alias.b branch
-	git config --global alias.a add
-	git config --global alias.d diff
-	git config --global alias.c "commit -v"
-	git config --global alias.l "log --deco"
-	git config --global merge.tool vimdiff
-	git config --global color.ui true
-	git config --global core.editor vim
-	git config --global user.name YuyaKobayashi
-	git config --global user.email ky.epk.leo@gmail.com
+	set_undefined_gitconfig(){
+		local key=$1
+		local val=$2
+		if [[ -z "$(git config --get $key)" ]] ; then
+			git config --global $key "$val"
+		fi
+	}
+	set_undefined_gitconfig alias.s status
+	set_undefined_gitconfig alias.b branch
+	set_undefined_gitconfig alias.a add
+	set_undefined_gitconfig alias.d diff
+	set_undefined_gitconfig alias.c "commit -v"
+	set_undefined_gitconfig alias.l "log --deco"
+	set_undefined_gitconfig merge.tool vimdiff
+	set_undefined_gitconfig color.ui true
+	set_undefined_gitconfig core.editor vim
+	set_undefined_gitconfig user.name YuyaKobayashi
+	set_undefined_gitconfig user.email ky.epk.leo@gmail.com
+
+	unset -f set_undefined_gitconfig
 fi
 
 # Initialization for .vimrc
