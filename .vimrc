@@ -25,8 +25,7 @@ filetype indent on
 
 "#####others set#######
 colorscheme desert
-set mouse=a
-let g:syntastic_c_include_dirs = ['/usr/lib/openmpi/include/']
+set mouse=a "enable mouse for all mode
 let g:tex_conceal='' "invalidate the conceal of tex
 set backspace=2 "enable delete \n by backspace
 set bs=start "enable backspace in insert mode
@@ -35,7 +34,6 @@ set cursorline	"high light line where focus is
 set nf="" "not take number for 8 or 16 shinsu.
 set nocompatible "enable plugin netrw
 set noswapfile "don't make a swap file
-set path+=/usr/lib/openmpi/include/
 set suffixesadd+=.rc "in command"gf", "suffixesadd" is added to the end of file name
 set wildmenu wildmode=list:longest	"show all selection when tab pushed
 set wildmode=list "make The Completion Mode listupmode
@@ -51,9 +49,6 @@ autocmd FileType sh hi Comment ctermfg=red
 autocmd FileType python set expandtab	
 
 "##########dein##########
-if &compatible
-	set nocompatible
-endif
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
 if has('vim_starting')
@@ -75,10 +70,6 @@ if has('vim_starting')
 	call dein#add('junegunn/vim-easy-align' )
 	call dein#add('tpope/vim-fugitive')
 	call dein#add('rking/ag.vim')
-	"Search in the Online English Dictionary
-	call dein#add('thinca/vim-ref')
-	"English <-> English Dictionary
-	call dein#add('mfumi/ref-dicts-en')
 	"alternative command
 	call dein#add('tyru/vim-altercmd')
 
@@ -90,39 +81,7 @@ if has('vim_starting')
 	call dein#end()
 endif
 
-"############# English Dictionary ###############"
-"Definition of Dictionary
-let g:ref_source_webdict_sites = {
-			\   'je': {
-			\     'url': 'http://dictionary.infoseek.ne.jp/jeword/%s',
-			\   },
-			\   'ej': {
-			\     'url': 'http://dictionary.infoseek.ne.jp/ejword/%s',
-			\   },
-			\	'ee': {
-			\	  'url' : 'http://www.oxforddictionaries.com/definition/english/%s',
-			\	}
-			\ }
-
-"default web
-let g:ref_source_webdict_sites.default = 'ej'
-
-"filter for the output
-"delete the first several rows
-function! g:ref_source_webdict_sites.je.filter(output)
-	return join(split(a:output, "\n")[15 :], "\n")
-endfunction
-function! g:ref_source_webdict_sites.ej.filter(output)
-	return join(split(a:output, "\n")[15 :], "\n")
-endfunction
-function! g:ref_source_webdict_sites.ee.filter(output)
-	return join(split(a:output, "\n")[150 :], "\n")
-endfunction
-
 call altercmd#load()
-CAlterCommand ej Ref webdict ej
-CAlterCommand je Ref webdict je
-CAlterCommand ee Ref webdict ee
 
 "############# neocomplete ###############"
 let g:neocomplete#enable_at_startup=1
