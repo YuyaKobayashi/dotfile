@@ -1,8 +1,23 @@
-alias rm="rm -i"
+# shortcut
 alias py="python3"
 alias sc="screen"
 alias g="git"
 alias gi="git"
-alias l="ls --color"
+
+
+alias rm="rm -i"
+alias l="ls -hF --color"
 alias v="vim"
-alias grep="grep --color"
+alias mkdir="mkdir -p"
+alias df="df -h"
+alias du="du -h"
+
+alias grep="grep --color=auto"
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# directory move
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
