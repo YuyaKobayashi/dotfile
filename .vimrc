@@ -1,3 +1,8 @@
+" NOTE: tantatively turn filetype off.
+"	(see :https://stackoverflow.com/questions/17630393/filetype-on-or-filetype-off)
+filetype off
+filetype plugin indent off
+
 "######keymapping########
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 
@@ -15,13 +20,6 @@ set smartcase	"if the search word contain Big char, nonIgnore
 set hlsearch	"high light search
 set incsearch	"serach on every time key pushed
 set nowrapscan	"prohibit returning to the Top when the search reaches the end of the matching words.
-
-
-"#########syntax###########
-syntax on
-filetype on "figure out filetype
-filetype plugin on
-filetype indent on
 
 "#####others set#######
 colorscheme desert
@@ -127,4 +125,6 @@ vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader>a <Plug>(EasyAlign)
 nmap <C-]> g<C-]>
 
-filetype on
+"#########syntax###########
+syntax on
+filetype plugin indent on "figure out file type
