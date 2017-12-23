@@ -19,7 +19,7 @@ shopt -s progcomp # enable complemention on program
 shopt -s xpg_echo # enable echo to expand escape sequence
 
 # Initialization for git
-if [[ -n "$(command -v git))" ]]; then
+if [[ -n "$(command -v git)" ]]; then
 	set_undefined_gitconfig(){
 		local key=$1
 		local val=$2
