@@ -13,3 +13,10 @@ install_cmd="source $script_dir/.bashrc"
 if [[ ! -f $user_bashrc ]] || [[ -z "cat $user_bashrc | grep $install_cmd" ]]; then
 	echo $install_cmd >>$user_bashrc
 fi
+
+# for fish
+user_fish_config=${HOME}/.config/fish/config.fish
+install_cmd="source $script_dir/config.fish"
+if [[ ! -f $user_fish_config ]] || [[ -z "cat $user_fish_config | grep $install_cmd" ]]; then
+	echo $install_cmd >>$user_fish_config
+fi
