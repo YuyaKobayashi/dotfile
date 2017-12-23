@@ -1,0 +1,11 @@
+alias.s status
+alias.b branch
+alias.a add
+alias.d diff
+alias.c commit -v
+alias.l log --deco
+merge.tool vimdiff
+color.ui true
+core.editor vim
+user.name YuyaKobayashi
+user.email ky.epk.leo@gmail.com

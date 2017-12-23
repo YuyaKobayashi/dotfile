@@ -22,24 +22,15 @@ if [[ -n "$(command -v git)" ]]; then
 			git config --global $key "$val"
 		fi
 	}
-	set_undefined_gitconfig alias.s status
-	set_undefined_gitconfig alias.b branch
-	set_undefined_gitconfig alias.a add
-	set_undefined_gitconfig alias.d diff
-	set_undefined_gitconfig alias.c "commit -v"
-	set_undefined_gitconfig alias.l "log --deco"
-	set_undefined_gitconfig merge.tool vimdiff
-	set_undefined_gitconfig color.ui true
-	set_undefined_gitconfig core.editor vim
-	set_undefined_gitconfig user.name YuyaKobayashi
-	set_undefined_gitconfig user.email ky.epk.leo@gmail.com
+	cat $script_dir/shell/gitconfig | while read key val; do
+		set_undefined_gitconfig $key "$val"
+	done
 
 	unset -f set_undefined_gitconfig
 fi
 
 # Initialization for .vimrc
 default_vimrc="$HOME/.vimrc"
-script_dir=$(cd $(dirname $BASH_SOURCE); pwd)
 if [[ -f "$default_vimrc" ]]; then
 	:
 else
