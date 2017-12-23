@@ -1,12 +1,8 @@
 #!/usr/bin/env fish
-alias rm="rm -i"
-alias py="python3"
-alias sc="screen"
-alias g="git"
-alias gi="git"
-alias l="ls --color"
-alias v="vim"
-alias grep="grep --color"
+set script_dir (cd (dirname (status -f)); pwd)
+
+# source alias
+source $script_dir/shell/alias
 
 # Initialization for git
 if [ -n "(command -s git)" ]

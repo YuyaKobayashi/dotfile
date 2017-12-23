@@ -1,13 +1,8 @@
 #/bin/bash 
 
-alias rm="rm -i"
-alias py="python3"
-alias sc="screen"
-alias g="git"
-alias gi="git"
-alias l="ls --color"
-alias v="vim"
-alias grep="grep --color"
+script_dir=$(cd $(dirname $BASH_SOURCE); pwd)
+
+source $script_dir/shell/alias
 
 shopt -s autocd # no need to input 'cd'
 shopt -s cdspell # do 'cd' successfully even if one character in given destination path name is wrong
