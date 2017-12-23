@@ -37,24 +37,36 @@ set wildmenu wildmode=list:longest	"show all selection when tab pushed
 set wildmode=list "make The Completion Mode listupmode
 set hidden "enable open a buffer with another buffer not saved
 
-augroup cpp-path
+" autocmd for some languages
+augroup c-au
     autocmd!
 	autocmd FileType cpp setlocal path+=/usr/include/c++/4.8
+	autocmd FileType cpp set dictionary=$HOME/.vim/dictionary/cpp.dict
 augroup END
-autocmd FileType cpp set dictionary=$HOME/.vim/dictionary/cpp.dict
-autocmd FileType c set dictionary=$HOME/.vim/dictionary/c.dict
-autocmd FileType sh hi Comment ctermfg=red
-autocmd FileType python set expandtab	
 
 "##########dein##########
 "TODO: modify with seeing (https://qiita.com/delphinus/items/00ff2c0ba972c6e41542)
+augroup c-au
+	autocmd!
+	autocmd FileType c set dictionary=$HOME/.vim/dictionary/c.dict
+augroup END
 
 " If dein is not installed yet, install.
 if !isdirectory(expand('~/.vim/dein/repos/github.com/Shougo/dein.vim'))
 	execute '!git clone https://github.com/Shougo/dein.vim' expand('~/.vim/dein/repos/github.com/Shougo/dein.vim')
 endif
+augroup sh-au
+	autocmd!
+	autocmd FileType sh hi Comment ctermfg=red
+	autocmd BufNewFile *.sh put='#!/bin/bash'
+augroup END
 
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim "TODO:use variable
+augroup py-au
+	autocmd!
+	autocmd FileType python set expandtab	
+	autocmd BufNewFile *.py put='#!/usr/bin/env python3'
+augroup END
 
 if has('vim_starting')
 	call dein#begin(expand('~/.vim/dein'))
