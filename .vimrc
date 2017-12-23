@@ -44,62 +44,93 @@ augroup c-au
 	autocmd FileType cpp set dictionary=$HOME/.vim/dictionary/cpp.dict
 augroup END
 
-"##########dein##########
-"TODO: modify with seeing (https://qiita.com/delphinus/items/00ff2c0ba972c6e41542)
 augroup c-au
 	autocmd!
 	autocmd FileType c set dictionary=$HOME/.vim/dictionary/c.dict
 augroup END
 
-" If dein is not installed yet, install.
-if !isdirectory(expand('~/.vim/dein/repos/github.com/Shougo/dein.vim'))
-	execute '!git clone https://github.com/Shougo/dein.vim' expand('~/.vim/dein/repos/github.com/Shougo/dein.vim')
-endif
 augroup sh-au
 	autocmd!
 	autocmd FileType sh hi Comment ctermfg=red
 	autocmd BufNewFile *.sh put='#!/bin/bash'
 augroup END
 
-set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim "TODO:use variable
 augroup py-au
 	autocmd!
 	autocmd FileType python set expandtab	
 	autocmd BufNewFile *.py put='#!/usr/bin/env python3'
 augroup END
 
-if has('vim_starting')
-	call dein#begin(expand('~/.vim/dein'))
+"##########dein##########
+if v:version < 704
+	echo "update vim version to 7.4"
+elseif !executable("git")
+	echo "install git"
+else
+	let s:dein_home = expand("~/.vim/dein")
+	let s:dein_repo_dir = s:dein_home . "/repos/github.com/Shougo/dein.vim"
 
-	call dein#add('Shougo/dein.vim')
+	" If dein is not installed yet, install.
+	if &runtimepath !~# '/dein.vim'
+		if !isdirectory(s:dein_repo_dir)
+			execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+		endif
+		execute 'set runtimepath+=' . fnamemodify(s:dein_repo_dir , ':p')
+	endif
 
-	" My Bundles here:
-	call dein#add('kien/ctrlp.vim')
-	call dein#add('flazz/vim-colorschemes')
-	call dein#add('thinca/vim-quickrun')
+	if and(dein#load_state(s:dein_home), has('vim_starting'))
+		call dein#begin(s:dein_home, [expand('<sfile>:p')])
 
-	call dein#add('Shougo/neosnippet')
-	call dein#add('Shougo/neocomplete')
-	call dein#add('Shougo/neosnippet-snippets')
-	call dein#add('yegappan/mru')
-	call dein#add('vim-scripts/grep.vim' )
-	call dein#add('scrooloose/syntastic' )
-	call dein#add('junegunn/vim-easy-align' )
-	call dein#add('tpope/vim-fugitive')
-	call dein#add('rking/ag.vim')
-	"alternative command
-	call dein#add('tyru/vim-altercmd')
+		" dein
+		call dein#add('Shougo/dein.vim')
 
-	call dein#add('vim-scripts/The-NERD-tree')
-	call dein#add('vim-scripts/taglist.vim')
-	call dein#add('https://github.com/wesleyche/SrcExpl.git')
-	call dein#add('https://github.com/wesleyche/Trinity.git')
+		call dein#add('flazz/vim-colorschemes')
+		call dein#add('thinca/vim-quickrun') "run source code in the buffer and show output to a new window by :QuickRun
 
-	call dein#end()
+		" snippet
+		call dein#add('Shougo/neosnippet')
+		call dein#add('Shougo/neosnippet-snippets')
 
-	call dein#save_state()
+		" completion
+		"TODO: configure deoplete if you got neovim or vim version 8.0 or above.
+		if has('nvim')
+			call dein#add('Shougo/deoplete.nvim')
+		elseif v:version >= 800
+			call dein#add('Shougo/deoplete.nvim')
+			call dein#add('roxma/nvim-yarp')
+			call dein#add('roxma/vim-hug-neovim-rpc')
+		else 
+			call dein#add('Shougo/neocomplete') "TODO: setup later
+		endif
+
+		call dein#add('yegappan/mru')
+		call dein#add('scrooloose/syntastic') " check grammer error on editting
+		call dein#add('junegunn/vim-easy-align') " easy and useful align feature
+		call dein#add('tpope/vim-fugitive') " git wrapper for vim
+		call dein#add('airblade/vim-gitgutter') " show mark that represents git diff
+		call dein#add('rking/ag.vim')
+		call dein#add('nathanaelkane/vim-indent-guides') " visualize depth of indent
+		"call dein#add('tomasr/molokai') " new colorscheme
+		
+
+		" plugin to replace an Ex command with user defined Ex command
+		call dein#add('tyru/vim-altercmd')
+
+		" Trinity
+		call dein#add('vim-scripts/The-NERD-tree')
+		call dein#add('vim-scripts/taglist.vim')
+		call dein#add('vim-scripts/SrcExpl')
+		call dein#add('vim-scripts/Trinity')
+
+		call dein#add('Shougo/unite.vim')
+
+		call dein#end()
+
+		call dein#save_state()
+	endif
+
 	if dein#check_install()
-	   call dein#update()
+		call dein#update()
 	endif
 endif
 
