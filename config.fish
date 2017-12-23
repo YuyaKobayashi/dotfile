@@ -12,8 +12,6 @@ if [ -n (command -s git) ]
 		if [ -z (git config --get $key) ]
 			git config --global $key "$val"
 		end
-		echo $key
-		echo "$val"
 	end
 	cat $script_dir/shell/gitconfig | while read key val
 		set_undefined_gitconfig $key "$val"
