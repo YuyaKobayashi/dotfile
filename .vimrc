@@ -94,36 +94,42 @@ endif
 call altercmd#load()
 
 "############# neocomplete ###############"
-let g:neocomplete#enable_at_startup=1
-let g:neocomplete#auto_completion_start_length=3
-let g:neocomplete#enable_fuzzy_completion=0
+if dein#tap("neocomplete")
+	let g:neocomplete#enable_at_startup=1
+	let g:neocomplete#auto_completion_start_length=3
+	let g:neocomplete#enable_fuzzy_completion=0
+endif
 
 
 "############# neosnippet ################"
 " Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-"smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-"xmap <C-k>     <Plug>(neosnippet_expand_target)
+if dein#tap("neosnippet")
+	imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+	"smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+	"xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-			\ "\<Plug>(neosnippet_expand_or_jump)"
-			\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-			\ "\<Plug>(neosnippet_expand_or_jump)"
-			\: "\<TAB>"
+	" SuperTab like snippets behavior.
+	imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+				\ "\<Plug>(neosnippet_expand_or_jump)"
+				\: pumvisible() ? "\<C-n>" : "\<TAB>"
+	smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+				\ "\<Plug>(neosnippet_expand_or_jump)"
+				\: "\<TAB>"
 
-" For snippet_complete marker.
-if has('conceal')
-	set conceallevel=2 concealcursor=i
+	" For snippet_complete marker.
+	if has('conceal')
+		set conceallevel=2 concealcursor=i
+	endif
 endif
 
 "############# vim-easy-align ################"
-"Start interactve EasyAlign in visual mode
-vmap <Enter> <Plug>(EasyAlign)
-"Start interactve EasyAlign for a motion/txt object
-nmap <Leader>a <Plug>(EasyAlign)
-nmap <C-]> g<C-]>
+if dein#tap("vim-easy-align")
+	"Start interactve EasyAlign in visual mode
+	vmap <Enter> <Plug>(EasyAlign)
+	"Start interactve EasyAlign for a motion/txt object
+	nmap <Leader>a <Plug>(EasyAlign)
+	nmap <C-]> g<C-]>
+endif
 
 "#########syntax###########
 syntax on
