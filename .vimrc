@@ -177,3 +177,5 @@ endif
 "#########syntax###########
 syntax on
 filetype plugin indent on "figure out file type
+
+set secure
