@@ -3,12 +3,13 @@ alias py="python3"
 alias sc="screen"
 alias g="git"
 alias gi="git"
+alias v="vim"
+alias vi="vim"
 
-
-alias rm="rm -i"
+# add options
 alias l="ls -hF --color"
 alias ls="ls -hF --color"
-alias v="vim"
+alias rm="rm -i"
 alias mkdir="mkdir -p"
 alias df="df -h"
 alias du="du -h"
