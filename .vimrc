@@ -52,13 +52,13 @@ augroup END
 augroup sh-au
 	autocmd!
 	autocmd FileType sh hi Comment ctermfg=red
-	autocmd BufNewFile *.sh put='#!/bin/bash'
+	autocmd BufNewFile *.sh put!='#!/bin/bash'
 augroup END
 
 augroup py-au
 	autocmd!
 	autocmd FileType python set expandtab	
-	autocmd BufNewFile *.py put='#!/usr/bin/env python3'
+	autocmd BufNewFile *.py put!='#!/usr/bin/env python3'
 augroup END
 
 "##########dein##########
