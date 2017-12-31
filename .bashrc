@@ -1,5 +1,6 @@
 #/bin/bash 
 
+os=$(uname -s)
 script_dir=$(cd $(dirname $BASH_SOURCE); pwd)
 
 # Initialization for git
@@ -39,7 +40,16 @@ fi
 # export #TODO: split here into a separeted file
 export SCREENRC="$script_dir/.screenrc"
 
+# alias
 source $script_dir/shell/alias
+if [[ "$os" == "Linux" ]]; then
+	alias ls="ls -hF --color"
+	alias l="ls -hF --color"
+else if [[ "$os" == "Darwin" ]] || [[ "$os" == "FreeBSD" ]]; then
+	alias ls="ls -hFG"
+	alias l="ls -hFG"
+fi
+
 
 shopt -s autocd # no need to input 'cd'
 shopt -s cdspell # do 'cd' successfully even if one character in given destination path name is wrong
@@ -49,4 +59,6 @@ shopt -s hostcomplete # enalbe complementing host name after @
 shopt -s interactive_comments # ignore commands after # on interactive shell
 shopt -s progcomp # enable complemention on program
 shopt -s xpg_echo # enable echo to expand escape sequence
+
 unset script_dir
+unset os

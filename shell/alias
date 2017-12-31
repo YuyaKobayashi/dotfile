@@ -7,8 +7,6 @@ alias v="vim"
 alias vi="vim"
 
 # add options
-alias l="ls -hF --color"
-alias ls="ls -hF --color"
 alias rm="rm -i"
 alias mkdir="mkdir -p"
 alias df="df -h"

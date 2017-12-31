@@ -1,8 +1,18 @@
 #!/usr/bin/env fish
 set script_dir (cd (dirname (status -f)); pwd)
+set os (uname -s)
 
-# source alias
+# alias
 source $script_dir/shell/alias
+switch "$os"
+case "Linux"
+	alias ls="ls -hF --color"
+	alias l="ls -hF --color"
+case "Darwin" "FreeBSD"
+	alias ls="ls -hFG"
+	alias l="ls -hFG"
+end
+
 
 # Initialization for git
 if [ -n (command -s git) ]
@@ -29,3 +39,4 @@ else
 end
 set -e default_vimrc
 set -e script_dir
+set -e os
