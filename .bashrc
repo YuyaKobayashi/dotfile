@@ -1,5 +1,10 @@
 #/bin/bash 
 
+if [[ -n "$(command -v fish)" ]]; then
+	fish 
+	exit
+fi
+
 script_dir=$(cd $(dirname $BASH_SOURCE); pwd)
 
 source $script_dir/shell/alias
