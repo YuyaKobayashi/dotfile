@@ -18,9 +18,6 @@ if [[ -n "$(command -v git)" ]]; then
 	unset -f set_undefined_gitconfig
 fi
 
-# export #TODO: split here into a separeted file
-export SCREENRC="$script_dir/.screenrc"
-
 # Initialization for .vimrc
 default_vimrc="$HOME/.vimrc"
 if [[ -f "$default_vimrc" ]]; then
@@ -38,6 +35,9 @@ if [[ -n "$(command -v fish)" ]]; then
        fish
        exit
 fi
+
+# export #TODO: split here into a separeted file
+export SCREENRC="$script_dir/.screenrc"
 
 source $script_dir/shell/alias
 
