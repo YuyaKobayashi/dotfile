@@ -32,6 +32,13 @@ _EOS_
 fi
 unset default_vimrc
 
+
+# launch fish shell
+if [[ -n "$(command -v fish)" ]]; then
+       fish
+       exit
+fi
+
 source $script_dir/shell/alias
 
 shopt -s autocd # no need to input 'cd'
