@@ -18,6 +18,7 @@ alias free="free -h"
 alias la="ls -a"
 alias ll="ls -l"
 alias lla="ls -la"
+alias lll="lla"
 
 alias grep="grep --color=auto"
 alias fgrep='fgrep --color=auto'
