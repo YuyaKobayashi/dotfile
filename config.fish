@@ -7,10 +7,8 @@ source $script_dir/shell/alias
 switch "$os"
 case "Linux"
 	alias ls="ls -hF --color"
-	alias l="ls -hF --color"
 case "Darwin" "FreeBSD"
 	alias ls="ls -hFG"
-	alias l="ls -hFG"
 end
 
 

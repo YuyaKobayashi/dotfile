@@ -44,10 +44,8 @@ export SCREENRC="$script_dir/.screenrc"
 source $script_dir/shell/alias
 if [[ "$os" == "Linux" ]]; then
 	alias ls="ls -hF --color"
-	alias l="ls -hF --color"
 else if [[ "$os" == "Darwin" ]] || [[ "$os" == "FreeBSD" ]]; then
 	alias ls="ls -hFG"
-	alias l="ls -hFG"
 fi
 
 
