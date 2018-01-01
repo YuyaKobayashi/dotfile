@@ -40,3 +40,5 @@ end
 set -e default_vimrc
 set -e script_dir
 set -e os
+
+cd ~
