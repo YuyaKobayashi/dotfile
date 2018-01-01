@@ -8,7 +8,6 @@ alias vi="vim"
 alias m="make"
 alias mk="make"
 alias l=ls
-alias la="ls -a"
 
 # add options
 alias rm="rm -i"
@@ -16,6 +15,9 @@ alias mkdir="mkdir -p"
 alias df="df -h"
 alias du="du -h"
 alias free="free -h"
+alias la="ls -a"
+alias ll="ls -l"
+alias lla="ls -la"
 
 alias grep="grep --color=auto"
 alias fgrep='fgrep --color=auto'
