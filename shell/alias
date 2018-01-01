@@ -5,6 +5,8 @@ alias g="git"
 alias gi="git"
 alias v="vim"
 alias vi="vim"
+alias m="make"
+alias mk="make"
 
 # add options
 alias rm="rm -i"
