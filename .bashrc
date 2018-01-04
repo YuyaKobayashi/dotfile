@@ -50,14 +50,16 @@ fi
 
 # installation
 ## pyenv
-pyenv_root=$HOME/.pyenv
-if [[ -d $pyenv ]]; then
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+if [[ -d $PYENV_ROOT ]]; then
 	:
 else
 	curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 fi
-unset pyenv_root
+eval "$(pyenv init -)"
 
+# shell options
 shopt -s autocd # no need to input 'cd'
 shopt -s cdspell # do 'cd' successfully even if one character in given destination path name is wrong
 shopt -s dirspell # correct typo when complementing path by <TAB>

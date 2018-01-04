@@ -41,12 +41,12 @@ set -e os
 
 # installation
 ## pyenv
-set pyenv_root $HOME/.pyenv
-if [ -d $pyenv ]
-	:
+set -x PYENV_ROOT $HOME/.pyenv
+set -x PATH $PYENV_ROOT/bin $PATH
+if [ -d $PYENV_ROOT ]
 else
 	curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 end
-set -e pyenv_root
+status --is-interactive; and . (pyenv init -| psub)
 
 cd ~
