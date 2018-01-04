@@ -48,6 +48,15 @@ else if [[ "$os" == "Darwin" ]] || [[ "$os" == "FreeBSD" ]]; then
 	alias ls="ls -hFG"
 fi
 
+# installation
+## pyenv
+pyenv_root=$HOME/.pyenv
+if [[ -d $pyenv ]]; then
+	:
+else
+	curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+fi
+unset pyenv_root
 
 shopt -s autocd # no need to input 'cd'
 shopt -s cdspell # do 'cd' successfully even if one character in given destination path name is wrong

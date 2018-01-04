@@ -39,4 +39,14 @@ set -e default_vimrc
 set -e script_dir
 set -e os
 
+# installation
+## pyenv
+set pyenv_root $HOME/.pyenv
+if [ -d $pyenv ]
+	:
+else
+	curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+end
+set -e pyenv_root
+
 cd ~
