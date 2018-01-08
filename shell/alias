@@ -8,7 +8,6 @@ alias vi="vim"
 alias m="make"
 alias mk="make"
 alias l=ls
-alias c=cd
 
 # add options
 alias rm="rm -i"
