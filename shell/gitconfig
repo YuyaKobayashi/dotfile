@@ -4,6 +4,7 @@ alias.a add
 alias.d diff
 alias.c commit -v
 alias.l log --deco
+alias.p push
 merge.tool vimdiff
 color.ui true
 core.editor vim
