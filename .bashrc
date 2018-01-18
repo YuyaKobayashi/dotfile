@@ -37,8 +37,10 @@ if [[ -n "$(command -v fish)" ]]; then
        exit
 fi
 
-# export #TODO: split here into a separeted file
-export SCREENRC="$script_dir/.screenrc"
+# export 
+cat $script_dir/shell/export | while read key val; do
+	eval export ${key}=$val
+done
 
 # alias
 source $script_dir/shell/alias
@@ -50,8 +52,6 @@ fi
 
 # installation
 ## pyenv
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
 if [[ -d $PYENV_ROOT ]]; then
 	:
 else

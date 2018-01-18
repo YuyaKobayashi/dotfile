@@ -36,13 +36,19 @@ else
 	echo source $script_dir/.vimrc >$default_vimrc 
 end
 set -e default_vimrc
-set -e script_dir
-set -e os
+
+# export 
+cat $script_dir/shell/export | while read key val
+	if [ "$key" = "PATH" ]
+		eval set -x $key (echo $val | tr ":" " ")
+	else
+		eval set -x $key "$val"
+	end
+end
+
 
 # installation
 ## pyenv
-set -x PYENV_ROOT $HOME/.pyenv
-set -x PATH $PYENV_ROOT/bin $PATH
 if [ -d $PYENV_ROOT ]
 else
 	curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
@@ -50,3 +56,6 @@ end
 status --is-interactive; and . (pyenv init -| psub)
 
 cd ~
+set -e script_dir
+set -e os
+
