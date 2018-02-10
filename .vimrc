@@ -181,6 +181,6 @@ syntax on
 filetype plugin indent on "figure out file type
 
 "######### syntastic #########
-let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+let g:syntastic_python_checkers = ['pep8']
 
 set secure
