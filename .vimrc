@@ -122,7 +122,9 @@ else
 		call dein#add('vim-scripts/SrcExpl')
 		call dein#add('vim-scripts/Trinity')
 
-		call dein#add('Shougo/unite.vim')
+		call dein#add('Shougo/unite.vim') "TODO:replace new one
+
+		call dein#add('scrooloose/syntastic')
 
 		call dein#end()
 
@@ -177,5 +179,8 @@ endif
 "#########syntax###########
 syntax on
 filetype plugin indent on "figure out file type
+
+"######### syntastic #########
+let g:syntastic_python_checkers = ['flake8']
 
 set secure
