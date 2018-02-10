@@ -8,6 +8,8 @@ alias vi="vim"
 alias m="make"
 alias mk="make"
 alias l=ls
+alias gf="git flow"
+alias gff="git flow feature"
 
 # add options
 alias rm="rm -i"
