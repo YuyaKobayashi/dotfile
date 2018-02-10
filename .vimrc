@@ -124,7 +124,7 @@ else
 
 		call dein#add('Shougo/unite.vim') "TODO:replace new one
 
-		call dein#add('scrooloose/syntastic')
+		call dein#add('vim-syntastic/syntastic')
 
 		call dein#end()
 
@@ -181,6 +181,6 @@ syntax on
 filetype plugin indent on "figure out file type
 
 "######### syntastic #########
-let g:syntastic_python_checkers = ['pep8']
+let g:syntastic_python_checkers = ['pep8', 'pyflakes']
 
 set secure
