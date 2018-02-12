@@ -202,6 +202,21 @@ function! IsSourcedScript(script)
 	endif
 endfunction
 
+
+"###### status line ######
+set statusline=(%n) "buffer number
+set statusline+=%f "relative file path
+set statusline+=%r "read only flag
+set statusline+=%h "help buffer flag
+set statusline+=%w "preview window flag
+set statusline+=%= "right alignment
+if dein#tap("vim-fugitive")
+	set statusline+=%{fugitive#statusline()} "show git branch name
+endif
+
+set laststatus=2
+
+
 let s:cwd_vimrc = getcwd() . "/.vimrc"
 if filereadable(s:cwd_vimrc) 
 	if IsSourcedScript(s:cwd_vimrc) == 0
