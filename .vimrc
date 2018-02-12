@@ -184,3 +184,24 @@ filetype plugin indent on "figure out file type
 let g:syntastic_python_checkers = ['pep8', 'pyflakes']
 
 set secure
+
+function! IsSourcedScript(script)
+	let s:sslist = ""
+	redir => s:sslist
+	silent! scriptnames
+	redir END
+	let s:ssslist = split(substitute(s:sslist, " \\+[0-9]\\+: \\+", "", "g"))
+	let s:sssslist = map(s:ssslist, "expand(v:val)")
+	if count(s:sssslist, a:script) != 0
+		return 1
+	else 
+		return 0
+	endif
+endfunction
+
+let s:cwd_vimrc = getcwd() . "/.vimrc"
+if filereadable(s:cwd_vimrc) 
+	if IsSourcedScript(s:cwd_vimrc) == 0
+		exec "source " . s:cwd_vimrc
+	endif
+endif
