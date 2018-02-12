@@ -217,6 +217,7 @@ endif
 set laststatus=2
 
 
+"###### source local .vimrc ######
 let s:cwd_vimrc = getcwd() . "/.vimrc"
 if filereadable(s:cwd_vimrc) 
 	if IsSourcedScript(s:cwd_vimrc) == 0
