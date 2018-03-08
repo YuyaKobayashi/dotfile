@@ -182,9 +182,12 @@ endif
 
 "############# deoplete ########################"
 if dein#tap("deoplete.nvim")
-	let g:deoplete#enalbe_at_startup = 1
-	let g:deoplete#auto_completion_start_length=3
-	let g:deoplete#enable_fuzzy_completion=0
+	let g:deoplete#enable_at_startup = 1
+	let g:deoplete#auto_completion_start_length = 1
+
+	let g:deoplete#sources = {}
+	let g:deoplete#sources._ = ['buffer']
+	let g:deoplete#sources.python = ['buffer', 'jedi']
 endif
 
 "############# denite ########################"
