@@ -181,16 +181,18 @@ if dein#tap("neosnippet")
 endif
 
 "############# denite ########################"
-if dein#tap('denite')
-	" key mapping
-	call dein#custom#map('insert', '<esc'>, '<denite:enter_mode:nomal>', 'noremap')
-	call denite#custom#map('normal', '<esc>', '<denite:quit>', 'noremap')
+if dein#tap("denite.nvim")
+	" key mapping in denite 
 	"" moving on candidates
 	call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
 	call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
-	"" open in a split window
-	call denite#custom#map('insert', '<C-j>', '<denite:do_action:split>', 'noremap')
-	call denite#custom#map('insert', '<C-k>', '<denite:do_action:vsplit>', 'noremap')
+	"" open file
+	call denite#custom#map('insert', '<C-n>', '<denite:do_action:split>', 'noremap')
+	call denite#custom#map('insert', '<C-v>', '<denite:do_action:vsplit>', 'noremap')
+	call denite#custom#map('insert', '<C-t>', '<denite:do_action:tabopen>', 'noremap')
+
+	" key mapping to open denite
+	nmap <silent> <C-u><C-f> :<C-u>Denite file_rec<CR>
 endif
 
 "############# vim-easy-align ################"
