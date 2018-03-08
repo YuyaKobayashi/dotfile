@@ -66,6 +66,10 @@ augroup py-au
 augroup END
 
 "##########dein##########
+if has('nvim') || v:version >= 800
+	let g:python3_host_prog = exepath('python3')
+endif
+
 if v:version < 704
 	echo "update vim version to 7.4"
 elseif !executable("git")
