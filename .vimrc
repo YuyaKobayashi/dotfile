@@ -68,6 +68,7 @@ augroup END
 "##########dein##########
 if has('nvim') || v:version >= 800
 	let g:python3_host_prog = exepath('python3')
+	let g:python2_host_prog = exepath('python2')
 endif
 
 if v:version < 704
