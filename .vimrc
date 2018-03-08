@@ -180,6 +180,19 @@ if dein#tap("neosnippet")
 	endif
 endif
 
+"############# denite ########################"
+if dein#tap('denite')
+	" key mapping
+	call dein#custom#map('insert', '<esc'>, '<denite:enter_mode:nomal>', 'noremap')
+	call denite#custom#map('normal', '<esc>', '<denite:quit>', 'noremap')
+	"" moving on candidates
+	call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
+	call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
+	"" open in a split window
+	call denite#custom#map('insert', '<C-j>', '<denite:do_action:split>', 'noremap')
+	call denite#custom#map('insert', '<C-k>', '<denite:do_action:vsplit>', 'noremap')
+endif
+
 "############# vim-easy-align ################"
 if dein#tap("vim-easy-align")
 	"Start interactve EasyAlign in visual mode
