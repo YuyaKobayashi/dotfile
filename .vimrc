@@ -108,6 +108,7 @@ else
 		call dein#add('junegunn/vim-easy-align') " easy and useful align feature
 		call dein#add('tpope/vim-fugitive') " git wrapper for vim
 		call dein#add('airblade/vim-gitgutter') " show mark that represents git diff
+		call dein#add('jreybert/vimagit')
 		call dein#add('rking/ag.vim')
 		call dein#add('nathanaelkane/vim-indent-guides') " visualize depth of indent
 		"call dein#add('tomasr/molokai') " new colorscheme
