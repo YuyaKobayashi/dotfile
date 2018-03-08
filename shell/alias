@@ -10,6 +10,7 @@ alias mk="make"
 alias l=ls
 alias gf="git flow"
 alias gff="git flow feature"
+alias nv="nvim"
 
 # add options
 alias rm="rm -i"
