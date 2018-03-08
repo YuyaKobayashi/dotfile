@@ -102,6 +102,7 @@ else
 		" completion
 		if has('nvim') || v:version >= 800 
 			call dein#add('Shougo/deoplete.nvim')
+			call dein#add('zchee/deoplete-jedi')
 			if !has('nvim')
 				call dein#add('roxma/nvim-yarp')
 				call dein#add('roxma/vim-hug-neovim-rpc')
