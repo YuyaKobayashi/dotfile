@@ -27,7 +27,11 @@ set mouse=a "enable mouse for all mode
 let g:tex_conceal='' "invalidate the conceal of tex
 set backspace=2 "enable delete \n by backspace
 set bs=start "enable backspace in insert mode
-set clipboard=unnamed,autoselect 
+if has('nvim')
+	set clipboard+=unnamedplus
+else
+	set clipboard=unnamed,autoselect 
+endif
 set cursorline	"high light line where focus is	 
 set nf="" "not take number for 8 or 16 shinsu.
 set nocompatible "enable plugin netrw
