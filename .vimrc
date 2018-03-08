@@ -180,6 +180,11 @@ if dein#tap("neosnippet")
 	endif
 endif
 
+"############# deoplete ########################"
+if dein#tap("deoplete.nvim")
+	let g:deoplete#enalbe_at_startup = 1
+endif
+
 "############# denite ########################"
 if dein#tap("denite.nvim")
 	" key mapping in denite 
