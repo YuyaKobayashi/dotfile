@@ -100,13 +100,12 @@ else
 		call dein#add('Shougo/neosnippet-snippets')
 
 		" completion
-		"TODO: configure deoplete if you got neovim or vim version 8.0 or above.
-		if has('nvim')
+		if has('nvim') || v:version >= 800 
 			call dein#add('Shougo/deoplete.nvim')
-		elseif v:version >= 800
-			call dein#add('Shougo/deoplete.nvim')
-			call dein#add('roxma/nvim-yarp')
-			call dein#add('roxma/vim-hug-neovim-rpc')
+			if !has('nvim')
+				call dein#add('roxma/nvim-yarp')
+				call dein#add('roxma/vim-hug-neovim-rpc')
+			endif
 		else 
 			call dein#add('Shougo/neocomplete') "TODO: setup later
 		endif
