@@ -127,7 +127,11 @@ else
 		call dein#add('vim-scripts/SrcExpl')
 		call dein#add('vim-scripts/Trinity')
 
-		call dein#add('Shougo/unite.vim') "TODO:replace new one
+		if (has('nvim') || v:version >= 800) && has("python3")
+			call dein#add('Shougo/denite.nvim') 
+		else
+			call dein#add('Shougo/unite.vim') 
+		endif
 
 		call dein#add('vim-syntastic/syntastic')
 
