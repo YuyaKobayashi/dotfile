@@ -30,3 +30,6 @@ bind ^p paste .
 ## misc
 bind s select
 bind ^s select
+
+## do not use hardware/termcap status line as message line
+hardstatus off
