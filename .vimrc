@@ -141,6 +141,7 @@ else
 		endif
 
 		call dein#add('vim-syntastic/syntastic')
+		call dein#add('bronson/vim-trailing-whitespace', { 'on_ft': 'python' })
 
 		call dein#end()
 
