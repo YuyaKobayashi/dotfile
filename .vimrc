@@ -206,6 +206,12 @@ if dein#tap("denite.nvim")
 	nmap <silent> <C-u><C-f> :<C-u>Denite file_rec<CR>
 endif
 
+"############## unite #############"
+if dein#tap("unite")
+	" key mapping to open unite
+	nmap <silent> <C-u><C-f> :<C-u>Unite file_rec<CR>
+endif
+
 "############# vim-easy-align ################"
 if dein#tap("vim-easy-align")
 	"Start interactve EasyAlign in visual mode
