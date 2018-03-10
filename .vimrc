@@ -109,7 +109,9 @@ else
 				call dein#add('roxma/vim-hug-neovim-rpc')
 			endif
 		else 
-			call dein#add('Shougo/neocomplete') "TODO: setup later
+			if has('lua')
+				call dein#add('Shougo/neocomplete') "TODO: setup later
+			endif
 		endif
 
 		call dein#add('yegappan/mru')
