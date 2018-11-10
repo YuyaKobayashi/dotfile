@@ -25,6 +25,6 @@ fi
 # install nvim
 NVIM_HOME=$HOME/install.d/neovim
 mkdir -p $NVIM_HOME
-url -o $NVIM_HOME/nvim -L https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+curl -o $NVIM_HOME/nvim -L https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 chmod u+x $NVIM_HOME/nvim
 
