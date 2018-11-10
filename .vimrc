@@ -114,6 +114,8 @@ else
 			endif
 		endif
 
+		call dein#add('vim-scripts/The-NERD-tree')
+		call dein#add('vim-scripts/taglist.vim')
 		call dein#add('yegappan/mru')
 		call dein#add('scrooloose/syntastic') " check grammer error on editting
 		call dein#add('junegunn/vim-easy-align') " easy and useful align feature
@@ -127,12 +129,6 @@ else
 
 		" plugin to replace an Ex command with user defined Ex command
 		call dein#add('tyru/vim-altercmd')
-
-		" Trinity
-		call dein#add('vim-scripts/The-NERD-tree')
-		call dein#add('vim-scripts/taglist.vim')
-		call dein#add('vim-scripts/SrcExpl')
-		call dein#add('vim-scripts/Trinity')
 
 		if (has('nvim') || v:version >= 800) && has("python3")
 			call dein#add('Shougo/denite.nvim') 
