@@ -62,6 +62,7 @@ augroup END
 augroup py-au
 	autocmd!
 	autocmd FileType python set expandtab	
+	autocmd FileType python set cc=80
 	autocmd BufNewFile *.py put!='#!/usr/bin/env python3'
 augroup END
 
@@ -227,7 +228,6 @@ filetype plugin indent on "figure out file type
 "######### syntastic #########
 let g:syntastic_python_checkers = ['pycodestyle', 'pyflakes']
 let g:syntastic_python_pycodestyle_quiet_messages = {
-	\ "regex":   '^E501 '
 	\ }
 
 set secure
