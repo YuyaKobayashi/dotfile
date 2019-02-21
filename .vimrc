@@ -130,6 +130,7 @@ else
 
 		" plugin to replace an Ex command with user defined Ex command
 		call dein#add('tyru/vim-altercmd')
+		call dein#add('vim-python/python-syntax')
 
 		if (has('nvim') || v:version >= 800) && has("python3")
 			call dein#add('Shougo/denite.nvim') 
@@ -151,6 +152,12 @@ else
 endif
 
 call altercmd#load()
+
+
+"############# python-syntax ###############"
+if dein#tap('python-syntax')
+	let python_highlight_all = 1
+endif
 
 "############# neocomplete ###############"
 if dein#tap("neocomplete")
