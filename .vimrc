@@ -5,6 +5,7 @@ filetype plugin indent off
 
 "######keymapping########
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap <C-]> <ESC>
 
 "#######visual set######
 set title	"show edit file name
