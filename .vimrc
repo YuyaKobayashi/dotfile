@@ -3,11 +3,15 @@
 filetype off
 filetype plugin indent off
 
-"######keymapping########
+"###### Keymapping ########
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap <C-]> <ESC>
 
-"#######visual set######
+"###### Command Alias ########
+command Gc Gcommit
+command Gd Gdiff
+
+"####### Visual ######
 set title	"show edit file name
 set number  "show line number
 set tabstop=4	"indent hava 4 spaces
@@ -15,14 +19,14 @@ set shiftwidth=4 "indent size on smartindent
 set smartindent "autoindent
 set showcmd "show command been being typed
 
-"######search set######
+"###### Search ######
 set ignorecase  "search ignoring Big/Small char
 set smartcase	"if the search word contain Big char, nonIgnore
 set hlsearch	"high light search
 set incsearch	"serach on every time key pushed
 set nowrapscan	"prohibit returning to the Top when the search reaches the end of the matching words.
 
-"#####others set#######
+"##### Others #######
 colorscheme desert
 set mouse=a "enable mouse for all mode
 let g:tex_conceal='' "invalidate the conceal of tex
