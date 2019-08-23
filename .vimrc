@@ -139,6 +139,7 @@ else
 
 		if (has('nvim') || v:version >= 800) && has("python3")
 			call dein#add('Shougo/denite.nvim') 
+			call dein#add('Shougo/neomru.nvim') 
 		else
 			call dein#add('Shougo/unite.vim') 
 		endif
@@ -216,6 +217,7 @@ if dein#tap("denite.nvim")
 
 	" key mapping to open denite
 	nmap <silent> <C-u><C-f> :<C-u>Denite file_rec<CR>
+	nmap <silent> <C-u><C-m> :<C-u>Denite file_mru<CR>
 endif
 
 "############## unite #############"
