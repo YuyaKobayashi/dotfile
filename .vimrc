@@ -215,7 +215,7 @@ if dein#tap("denite.nvim")
 	call denite#custom#map('insert', '<C-t>', '<denite:do_action:tabopen>', 'noremap')
 
 	" key mapping to open denite
-	nmap <silent> <C-u><C-f> :<C-u>Denite file_rec<CR>
+	nmap <silent> <C-u><C-f> :<C-u>Denite file/rec<CR>
 endif
 
 "############## unite #############"
