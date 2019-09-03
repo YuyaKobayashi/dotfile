@@ -218,6 +218,12 @@ if dein#tap("denite.nvim")
 	nmap <silent> <C-u><C-f> :<C-u>Denite file/rec<CR>
 endif
 
+"############# taglist ########################"
+if dein#tap("taglist.vim")
+	" open taglist in right
+	let Tlist_User_Right_Window = 1
+endif
+
 "############## unite #############"
 if dein#tap("unite")
 	" key mapping to open unite
