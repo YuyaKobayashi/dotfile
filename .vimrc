@@ -110,6 +110,8 @@ else
 		if has('nvim') || v:version >= 800 
 			call dein#add('Shougo/deoplete.nvim')
 			call dein#add('zchee/deoplete-jedi')
+			call dein#add('Shougo/deoplete-clangx')
+			call dein#add('deoplete-plugins/deoplete-tag')
 			if !has('nvim')
 				call dein#add('roxma/nvim-yarp')
 				call dein#add('roxma/vim-hug-neovim-rpc')
@@ -196,11 +198,6 @@ endif
 "############# deoplete ########################"
 if dein#tap("deoplete.nvim")
 	let g:deoplete#enable_at_startup = 1
-	let g:deoplete#auto_completion_start_length = 1
-
-	let g:deoplete#sources = {}
-	let g:deoplete#sources._ = ['buffer']
-	let g:deoplete#sources.python = ['buffer', 'jedi']
 endif
 
 "############# denite ########################"
