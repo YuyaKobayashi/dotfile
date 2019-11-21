@@ -18,6 +18,7 @@ set tabstop=4	"indent hava 4 spaces
 set shiftwidth=4 "indent size on smartindent	
 set smartindent "autoindent
 set showcmd "show command been being typed
+set expandtab
 
 "###### Search ######
 set ignorecase  "search ignoring Big/Small char
@@ -27,7 +28,6 @@ set incsearch	"serach on every time key pushed
 set nowrapscan	"prohibit returning to the Top when the search reaches the end of the matching words.
 
 "##### Others #######
-colorscheme desert
 set mouse=a "enable mouse for all mode
 let g:tex_conceal='' "invalidate the conceal of tex
 set backspace=2 "enable delete \n by backspace
@@ -133,6 +133,7 @@ else
 		call dein#add('rking/ag.vim')
 		call dein#add('nathanaelkane/vim-indent-guides') " visualize depth of indent
 		"call dein#add('tomasr/molokai') " new colorscheme
+		call dein#add('tomasiser/vim-code-dark') " new colorscheme
 		
 
 		" plugin to replace an Ex command with user defined Ex command
@@ -281,6 +282,8 @@ endif
 
 set laststatus=2
 
+"###### color scheme #####
+colorscheme codedark
 
 "###### source local .vimrc ######
 let s:cwd_vimrc = getcwd() . "/.vimrc"
