@@ -6,6 +6,7 @@ filetype plugin indent off
 "###### Keymapping ########
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap <C-]> <ESC>
+inoremap <C-Q> <ESC>
 
 "###### Command Alias ########
 command Gc Gcommit
