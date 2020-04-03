@@ -3,7 +3,7 @@ alias.b branch
 alias.a add
 alias.d diff
 alias.c commit -v
-alias.l log --deco
+alias.l log --decorate
 alias.p push
 alias.pl pull
 alias.co checkout
