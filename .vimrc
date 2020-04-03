@@ -110,6 +110,8 @@ else
 		call dein#add('Shougo/neosnippet')
 		call dein#add('Shougo/neosnippet-snippets')
 
+        call dein#add('vim-scripts/OmniCppComplete')
+
 		" completion
 		if has('nvim') || v:version >= 800 
 			call dein#add('Shougo/deoplete.nvim')
