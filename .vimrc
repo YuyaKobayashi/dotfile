@@ -123,6 +123,7 @@ else
 			endif
 		endif
 
+        call dein#add('tpope/vim-endwise')
 		call dein#add('vim-scripts/The-NERD-tree')
 		call dein#add('vim-scripts/taglist.vim')
 		call dein#add('yegappan/mru')
