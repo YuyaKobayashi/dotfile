@@ -72,6 +72,11 @@ augroup py-au
 	autocmd BufNewFile *.py put!='#!/usr/bin/env python3'
 augroup END
 
+"######### Installation Check ####
+if has('python3') && empty(system("bash -c 'python3 -m pip show pynvim 2>/dev/null'"))
+    echo "[WARNING] pynvim is not found. Install it by `python3 -m pip install pynvim`."
+endif
+
 "##########dein##########
 if has('nvim') || v:version >= 800
 	let g:python3_host_prog = exepath('python3')
@@ -79,9 +84,7 @@ if has('nvim') || v:version >= 800
 endif
 
 if v:version < 704
-	echo "update vim version to 7.4"
-elseif !executable("git")
-	echo "install git"
+	echo "[WARNING] update vim version to 7.4"
 else
 	let s:dein_home = expand("~/.vim/dein")
 	let s:dein_repo_dir = s:dein_home . "/repos/github.com/Shougo/dein.vim"
@@ -119,7 +122,7 @@ else
 			endif
 		else 
 			if has('lua')
-				call dein#add('Shougo/neocomplete') "TODO: setup later
+				call dein#add('Shougo/neocomplete')
 			endif
 		endif
 
@@ -162,7 +165,6 @@ else
 endif
 
 call altercmd#load()
-
 
 "############# python-syntax ###############"
 if dein#tap('python-syntax')
@@ -253,6 +255,14 @@ filetype plugin indent on "figure out file type
 let g:syntastic_python_checkers = ['pycodestyle', 'pyflakes']
 let g:syntastic_python_pycodestyle_quiet_messages = {
 	\ }
+
+"######### deoplete-clangx ##########
+if dein#tap("deoplete-clangx")
+    " clang command check
+    if !executable("clang")
+        echo "[WARNING] deoplete-clangx is inavailable because `clang` is not found."
+    endif
+endif
 
 set secure
 
