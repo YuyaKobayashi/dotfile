@@ -118,6 +118,8 @@ else
 			call dein#add('zchee/deoplete-jedi')
 			call dein#add('Shougo/deoplete-clangx')
 			call dein#add('deoplete-plugins/deoplete-tag')
+            call dein#add('racer-rust/vim-racer')
+            call dein#add('tbodt/deoplete-tabnine', { 'build': './install.sh' })
 			if !has('nvim')
 				call dein#add('roxma/nvim-yarp')
 				call dein#add('roxma/vim-hug-neovim-rpc')
