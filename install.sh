@@ -21,10 +21,3 @@ if [[ ! -f $user_fish_config ]] || [[ -z "cat $user_fish_config | grep $install_
 	mkdir -p $(dirname $user_fish_config)
 	echo $install_cmd >>$user_fish_config
 fi
-
-# install nvim
-NVIM_HOME=$HOME/install.d/neovim
-mkdir -p $NVIM_HOME
-curl -o $NVIM_HOME/nvim -L https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-chmod u+x $NVIM_HOME/nvim
-
