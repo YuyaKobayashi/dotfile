@@ -52,6 +52,9 @@ fi
 cat $script_dir/shell/export | while read key val; do
 	eval export ${key}=$val
 done
+cat $script_dir/shell/local_export | while read key val; do
+	eval export ${key}=$val
+done
 
 # alias
 source $script_dir/shell/alias

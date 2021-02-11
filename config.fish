@@ -55,10 +55,18 @@ cat $script_dir/shell/export | while read key val
 	end
 end
 
+cat $script_dir/shell/local_export | while read key val
+	if [ "$key" = "PATH" ]
+		eval set -x $key (echo $val | tr ":" " ")
+	else
+		eval set -x $key "$val"
+	end
+end
+
 
 # installation
 ## pyenv
-if [ -d $PYENV_ROOT ]
+if [ -d "$PYENV_ROOT" ]
 else
 	curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 end
