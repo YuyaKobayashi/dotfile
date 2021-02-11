@@ -43,7 +43,7 @@ fi
 
 
 # launch fish shell
-if [[ -n "$(command -v fish)" ]]; then
+if [[ -n "$(command -v fish)" ]] && [[ -z "$DISABLE_FISH" ]]; then
        fish
        exit
 fi
