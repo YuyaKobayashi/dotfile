@@ -55,12 +55,14 @@ cat $script_dir/shell/export | while read key val
 	end
 end
 
-cat $script_dir/shell/local_export | while read key val
-	if [ "$key" = "PATH" ]
-		eval set -x $key (echo $val | tr ":" " ")
-	else
-		eval set -x $key "$val"
-	end
+if [ -f "$script_dir/shell/local_export" ]
+    cat $script_dir/shell/local_export | while read key val
+        if [ "$key" = "PATH" ]
+            eval set -x $key (echo $val | tr ":" " ")
+        else
+            eval set -x $key "$val"
+        end
+    end
 end
 
 
