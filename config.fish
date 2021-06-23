@@ -1,4 +1,5 @@
 #!/usr/bin/env fish
+set old_cwd $CWD
 set script_dir (cd (dirname (status -f)); pwd)
 set os (uname -s)
 
@@ -116,3 +117,5 @@ function fish_prompt
 
 	set_color normal
 end
+
+cd $old_cwd
