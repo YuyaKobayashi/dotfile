@@ -74,7 +74,6 @@ else
 end
 status --is-interactive; and . (pyenv init -| psub)
 
-cd ~
 set -e script_dir
 set -e os
 
