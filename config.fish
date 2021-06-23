@@ -1,5 +1,5 @@
 #!/usr/bin/env fish
-set old_cwd $CWD
+set old_cwd (pwd)
 set script_dir (cd (dirname (status -f)); pwd)
 set os (uname -s)
 
