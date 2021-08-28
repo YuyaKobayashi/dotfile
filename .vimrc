@@ -7,6 +7,7 @@ filetype plugin indent off
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap <C-]> <ESC>
 inoremap <C-S> <ESC>
+noremap J <Nop>
 
 "###### Command Alias ########
 command Gc Gcommit
