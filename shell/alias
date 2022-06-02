@@ -3,15 +3,11 @@ alias py="python3"
 alias sc="screen"
 alias g="git"
 alias gi="git"
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
 alias m="make"
 alias mk="make"
 alias l=ls
 alias gf="git flow"
 alias gff="git flow feature"
-alias nv="nvim"
 
 # add options
 alias rm="rm -i"
