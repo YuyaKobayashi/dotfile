@@ -268,6 +268,7 @@ let g:syntastic_python_checkers = ['pycodestyle', 'pyflakes']
 let g:syntastic_python_pycodestyle_quiet_messages = {
             \ "regex": "^\\(E501\\|E221\\|E741\\)"
 	\ }
+let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 "######### deoplete-clangx ##########
 if dein#tap("deoplete-clangx")
