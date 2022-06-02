@@ -9,10 +9,6 @@ inoremap <C-]> <ESC>
 inoremap <C-S> <ESC>
 noremap J <Nop>
 
-"###### Command Alias ########
-command Gc Gcommit
-command Gd Gdiff
-
 "####### Visual ######
 set title	"show edit file name
 set number  "show line number
@@ -108,8 +104,8 @@ else
 		call dein#add('thinca/vim-quickrun') "run source code in the buffer and show output to a new window by :QuickRun
 
 		" snippet
-		call dein#add('Shougo/neosnippet')
-		call dein#add('Shougo/neosnippet-snippets')
+		" call dein#add('Shougo/neosnippet')
+		" call dein#add('Shougo/neosnippet-snippets')
 
         call dein#add('vim-scripts/OmniCppComplete')
 
@@ -121,6 +117,7 @@ else
 			call dein#add('deoplete-plugins/deoplete-tag')
             call dein#add('racer-rust/vim-racer')
             call dein#add('tbodt/deoplete-tabnine', { 'build': './install.sh' })
+            call dein#add('stsewd/sphinx.nvim')
 			if !has('nvim')
 				call dein#add('roxma/nvim-yarp')
 				call dein#add('roxma/vim-hug-neovim-rpc')
@@ -151,12 +148,11 @@ else
 		call dein#add('vim-python/python-syntax')
 
 		if (has('nvim') || v:version >= 800) && has("python3")
-			call dein#add('Shougo/denite.nvim') 
+            "call dein#add('Shougo/denite.nvim') 
 		else
 			call dein#add('Shougo/unite.vim') 
 		endif
 
-		call dein#add('vim-syntastic/syntastic')
 		call dein#add('bronson/vim-trailing-whitespace', { 'on_ft': 'python' })
 
 		call dein#end()
