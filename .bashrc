@@ -60,6 +60,7 @@ fi
 
 # alias
 source $script_dir/shell/alias
+source $script_dir/shell/custom_cmds.sh
 if [[ "$os" == "Linux" ]]; then
 	alias ls="ls -hF --color"
 elif [[ "$os" == "Darwin" ]] || [[ "$os" == "FreeBSD" ]]; then
