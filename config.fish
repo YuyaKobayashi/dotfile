@@ -68,14 +68,6 @@ if [ -f "$script_dir/shell/local_export" ]
 end
 
 
-# installation
-## pyenv
-if [ -d "$PYENV_ROOT" ]
-else
-	curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
-end
-status --is-interactive; and . (pyenv init -| psub)
-
 set -e script_dir
 set -e os
 
