@@ -123,6 +123,16 @@ else
 				call dein#add('roxma/nvim-yarp')
 				call dein#add('roxma/vim-hug-neovim-rpc')
 			endif
+
+			call dein#add('nvim-telescope/telescope.nvim')
+
+            " coc
+            call dein#add('neoclide/coc.nvim', { 'merged': 0, 'rev': 'release' })
+            call dein#add('clangd/coc-clangd')
+            call dein#add('voldikss/coc-cmake')
+            call dein#add('josa42/coc-docker')
+            call dein#add('fannheyward/coc-pyright')
+            call dein#add('fannheyward/coc-rust-analyzer')
 		else 
 			if has('lua')
 				call dein#add('Shougo/neocomplete')
@@ -265,6 +275,11 @@ if dein#tap("deoplete-clangx")
     if !executable("clang")
         echo "[WARNING] deoplete-clangx is inavailable because `clang` is not found."
     endif
+endif
+
+"############# coc ########################"
+if dein#tap("coc")
+    let g:coc_node_path = '/snap/bin/node'
 endif
 
 set secure
