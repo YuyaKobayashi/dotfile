@@ -104,65 +104,26 @@ else
 		call dein#add('flazz/vim-colorschemes')
 		call dein#add('thinca/vim-quickrun') "run source code in the buffer and show output to a new window by :QuickRun
 
-		" snippet
-		" call dein#add('Shougo/neosnippet')
-		" call dein#add('Shougo/neosnippet-snippets')
-
-        call dein#add('vim-scripts/OmniCppComplete')
-
-		" completion
-		if has('nvim') || v:version >= 800 
-			call dein#add('Shougo/deoplete.nvim')
-			call dein#add('zchee/deoplete-jedi')
-			call dein#add('Shougo/deoplete-clangx')
-			call dein#add('deoplete-plugins/deoplete-tag')
-            call dein#add('racer-rust/vim-racer')
-            call dein#add('tbodt/deoplete-tabnine', { 'build': './install.sh' })
-            call dein#add('stsewd/sphinx.nvim')
-			if !has('nvim')
-				call dein#add('roxma/nvim-yarp')
-				call dein#add('roxma/vim-hug-neovim-rpc')
-			endif
-
-			call dein#add('nvim-telescope/telescope.nvim')
-
-            " coc
-            call dein#add('neoclide/coc.nvim', { 'merged': 0, 'rev': 'release' })
-            call dein#add('clangd/coc-clangd')
-            call dein#add('voldikss/coc-cmake')
-            call dein#add('josa42/coc-docker')
-            call dein#add('fannheyward/coc-pyright')
-            call dein#add('fannheyward/coc-rust-analyzer')
-		else 
-			if has('lua')
-				call dein#add('Shougo/neocomplete')
-			endif
-		endif
-
         call dein#add('tpope/vim-endwise')
 		call dein#add('vim-scripts/The-NERD-tree')
 		call dein#add('vim-scripts/taglist.vim')
 		call dein#add('yegappan/mru')
 		call dein#add('scrooloose/syntastic') " check grammer error on editting
 		call dein#add('junegunn/vim-easy-align') " easy and useful align feature
-		call dein#add('tpope/vim-fugitive') " git wrapper for vim
+        if has('nvim')
+            call dein#add('doronbehar/nvim-fugitive') " git wrapper for vim
+        else
+            call dein#add('tpope/vim-fugitive') " git wrapper for vim
+        endif
 		call dein#add('airblade/vim-gitgutter') " show mark that represents git diff
 		call dein#add('jreybert/vimagit')
 		call dein#add('rking/ag.vim')
 		call dein#add('nathanaelkane/vim-indent-guides') " visualize depth of indent
-		"call dein#add('tomasr/molokai') " new colorscheme
 		call dein#add('tomasiser/vim-code-dark') " new colorscheme
 		
-
 		" plugin to replace an Ex command with user defined Ex command
-		call dein#add('tyru/vim-altercmd')
+		" call dein#add('tyru/vim-altercmd')
 		call dein#add('vim-python/python-syntax')
-
-		if (has('nvim') || v:version >= 800) && has("python3")
-            "call dein#add('Shougo/denite.nvim') 
-		else
-			call dein#add('Shougo/unite.vim') 
-		endif
 
 		call dein#add('bronson/vim-trailing-whitespace', { 'on_ft': 'python' })
 
@@ -181,40 +142,6 @@ endif
 "############# python-syntax ###############"
 if dein#tap('python-syntax')
 	let python_highlight_all = 1
-endif
-
-"############# neocomplete ###############"
-if dein#tap("neocomplete")
-	let g:neocomplete#enable_at_startup=1
-	let g:neocomplete#auto_completion_start_length=3
-	let g:neocomplete#enable_fuzzy_completion=0
-endif
-
-
-"############# neosnippet ################"
-" Plugin key-mappings.
-if dein#tap("neosnippet")
-	imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-	"smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-	"xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-	" SuperTab like snippets behavior.
-	imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-				\ "\<Plug>(neosnippet_expand_or_jump)"
-				\: pumvisible() ? "\<C-n>" : "\<TAB>"
-	smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-				\ "\<Plug>(neosnippet_expand_or_jump)"
-				\: "\<TAB>"
-
-	" For snippet_complete marker.
-	if has('conceal')
-		set conceallevel=2 concealcursor=i
-	endif
-endif
-
-"############# deoplete ########################"
-if dein#tap("deoplete.nvim")
-	let g:deoplete#enable_at_startup = 1
 endif
 
 "############# denite ########################"
@@ -249,7 +176,6 @@ if dein#tap("mru")
 	nmap <silent> <C-u><C-m> :<C-u>MRU<CR>
 endif
 
-
 "############# vim-easy-align ################"
 if dein#tap("vim-easy-align")
 	"Start interactve EasyAlign in visual mode
@@ -276,11 +202,6 @@ if dein#tap("deoplete-clangx")
     if !executable("clang")
         echo "[WARNING] deoplete-clangx is inavailable because `clang` is not found."
     endif
-endif
-
-"############# coc ########################"
-if dein#tap("coc")
-    let g:coc_node_path = '/snap/bin/node'
 endif
 
 set secure
