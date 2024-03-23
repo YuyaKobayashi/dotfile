@@ -12,3 +12,4 @@ color.ui true
 core.editor vim
 user.name YuyaKobayashi
 user.email ky.epk.leo@gmail.com
+init.defaultBranch main
