@@ -176,7 +176,7 @@ else
 	endif
 endif
 
-call altercmd#load()
+" call altercmd#load()
 
 "############# python-syntax ###############"
 if dein#tap('python-syntax')
