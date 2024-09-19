@@ -20,6 +20,11 @@ for opt in $@; do
     esac
 done
 
+# arg check
+if [[ -z "$SRC" ]]; then
+    help
+fi
+
 copy() {
     src=$1  # regular file
     dst=$(dirname $DST/$src)
@@ -27,6 +32,7 @@ copy() {
     cp -a $src $dst
 }
 
+# Copy
 for f in $SRC; do
     if [[ -d $f ]]; then
         for _f in $(find $f -type f); do
