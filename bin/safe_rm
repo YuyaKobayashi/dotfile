@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -ue
+
+ask_yn() {
+    echo -n $@ ' (y/n): '
+    while read line; do
+        if [[ "$line" == "y" ]] ; then
+            return 0
+        elif [[ "$line" == "n" ]] ; then
+            return -1
+        else
+            echo -n "Please input (y/n): "
+        fi
+    done
+}
+
+msg="About to delete $@. Ok to continue?"
+ask_yn "$msg"
+\rm -fr $@
+

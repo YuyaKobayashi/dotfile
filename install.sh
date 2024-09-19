@@ -5,6 +5,8 @@
 # Any modification in this repository is reflected on sourcing ./.bashrc.
 #
 
+cp -a bin/* .local/bin/
+
 script_dir=$(cd $(dirname $BASH_SOURCE); pwd)
 
 # for bash

@@ -34,3 +34,7 @@ alias .....="cd ../../../.."
 
 # typo
 alias sl=ls
+
+# custom command
+alias rm="safe_rm"
+
