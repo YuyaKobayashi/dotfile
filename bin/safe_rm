@@ -3,7 +3,8 @@
 set -ue
 
 ask_yn() {
-    echo -n $@ ' (y/n): '
+    echo -e "$@"
+    echo -n 'OK? (y/n): '
     while read line; do
         if [[ "$line" == "y" ]] ; then
             return 0
@@ -15,7 +16,14 @@ ask_yn() {
     done
 }
 
-msg="About to delete $@. Ok to continue?"
+# create msg
+msg="About to delete:
+"
+for f in $@; do
+    msg+=" $(echo $f)"
+done
+msg+="
+"
 ask_yn "$msg"
 \rm -fr $@
 
