@@ -5,7 +5,9 @@
 # Any modification in this repository is reflected on sourcing ./.bashrc.
 #
 
-cp -a bin/* $HOME/.local/bin/
+user_bin=$HOME/.local/bin/
+mkdir -p $user_bin
+cp -a bin/* $user_bin
 
 script_dir=$(cd $(dirname $BASH_SOURCE); pwd)
 
