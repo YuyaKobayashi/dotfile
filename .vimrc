@@ -104,21 +104,21 @@ else
 		call dein#add('flazz/vim-colorschemes')
 		call dein#add('thinca/vim-quickrun') "run source code in the buffer and show output to a new window by :QuickRun
 
-        call dein#add('tpope/vim-endwise')
+        call dein#add('tpope/vim-endwise') " automatically insert endpoint of code block (e.g. `done` corresponding `for` in shell script).
 		call dein#add('vim-scripts/The-NERD-tree')
 		call dein#add('vim-scripts/taglist.vim')
 		call dein#add('yegappan/mru')
-		call dein#add('scrooloose/syntastic') " check grammer error on editting
+		call dein#add('vim-scripts/syntastic') " check grammer error on editting
 		call dein#add('junegunn/vim-easy-align') " easy and useful align feature
         if has('nvim')
             call dein#add('doronbehar/nvim-fugitive') " git wrapper for vim
         else
             call dein#add('tpope/vim-fugitive') " git wrapper for vim
         endif
-		call dein#add('airblade/vim-gitgutter') " show mark that represents git diff
-		call dein#add('jreybert/vimagit')
+		"call dein#add('airblade/vim-gitgutter') " show mark that represents git diff
+		"call dein#add('jreybert/vimagit')
 		call dein#add('rking/ag.vim')
-		call dein#add('nathanaelkane/vim-indent-guides') " visualize depth of indent
+		"call dein#add('nathanaelkane/vim-indent-guides') " visualize depth of indent
 		call dein#add('tomasiser/vim-code-dark') " new colorscheme
 		
 		" plugin to replace an Ex command with user defined Ex command
@@ -190,7 +190,7 @@ syntax on
 filetype plugin indent on "figure out file type
 
 "######### syntastic #########
-let g:syntastic_python_checkers = ['pycodestyle', 'pyflakes']
+let g:syntastic_python_checkers = ['flake8', 'pycodestyle', 'pyflakes']
 let g:syntastic_python_pycodestyle_quiet_messages = {
             \ "regex": "^\\(E501\\|E221\\|E741\\)"
 	\ }
