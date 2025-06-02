@@ -10,6 +10,7 @@ alias.co checkout
 alias.rs restore
 alias.sw switch
 merge.tool vimdiff
+pull.rebase true
 color.ui true
 core.editor vim
 init.defaultBranch main
