@@ -7,9 +7,9 @@ alias.l log --decorate
 alias.p push
 alias.pl pull
 alias.co checkout
+alias.rs restore
+alias.sw switch
 merge.tool vimdiff
 color.ui true
 core.editor vim
-user.name YuyaKobayashi
-user.email ky.epk.leo@gmail.com
 init.defaultBranch main
