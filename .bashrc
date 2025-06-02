@@ -41,13 +41,6 @@ else
 	fi
 fi
 
-
-# launch fish shell
-if [[ -n "$(command -v fish)" ]] && [[ -z "$DISABLE_FISH" ]]; then
-       fish
-       exit
-fi
-
 # export 
 cat $script_dir/shell/export | while read key val; do
 	eval export ${key}=$val
