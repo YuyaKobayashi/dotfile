@@ -126,6 +126,7 @@ else
 		call dein#add('vim-python/python-syntax')
 
 		call dein#add('bronson/vim-trailing-whitespace', { 'on_ft': 'python' })
+		call dein#add('github/copilot.vim')
 
 		call dein#end()
 
