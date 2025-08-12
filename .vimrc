@@ -54,7 +54,6 @@ augroup END
 augroup c-au
 	autocmd!
 	autocmd FileType c set dictionary=$HOME/.vim/dictionary/c.dict
-	autocmd BufNewFile *.py put!='#!/usr/bin/env python3'
 augroup END
 
 augroup sh-au
