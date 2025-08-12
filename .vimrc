@@ -59,6 +59,7 @@ augroup END
 augroup sh-au
 	autocmd!
 	autocmd FileType sh hi Comment ctermfg=red
+	autocmd BufNewFile *.sh put!='set -ue'
 	autocmd BufNewFile *.sh put!='#!/bin/bash'
 augroup END
 
