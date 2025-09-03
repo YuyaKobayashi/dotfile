@@ -10,3 +10,5 @@ applyTo: "**.py"
 
 - Library Usage
   - Do not use `os.path`. Use `pathlib` instead.
+  - When using np.ndarray in function signature, write assumed shape and dtype in comment.
+
