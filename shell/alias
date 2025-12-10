@@ -12,7 +12,7 @@ alias vi=vim
 alias v=vim
 
 # add options
-alias rm="rm -i"
+alias rm="rm -Ii"
 alias mkdir="mkdir -p"
 alias df="df -h"
 alias du="du -h"
@@ -34,7 +34,4 @@ alias .....="cd ../../../.."
 
 # typo
 alias sl=ls
-
-# custom command
-alias rm="safe_rm"
 
