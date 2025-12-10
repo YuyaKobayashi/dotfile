@@ -1,0 +1,10 @@
+silversearcher-ag
+tmux
+git
+fish
+python3
+python3-pip
+vim
+curl
+wget
+tar

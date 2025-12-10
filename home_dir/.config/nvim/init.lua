@@ -14,6 +14,7 @@ require("lazy").setup("plugins", {
 })
 
 -- Load sepearate configuration files
+require("config.vim")
 require("config.lsp")
 require("config.cmp")
 require("config.treesitter")

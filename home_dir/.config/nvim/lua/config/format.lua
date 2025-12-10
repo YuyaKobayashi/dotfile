@@ -8,7 +8,7 @@ require("conform").setup({
 })
 
 -- 保存時に自動フォーマット
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*.py", "*.c", "*.cpp", "*.hpp" },
-  callback = function() require("conform").format({ async = false, lsp_fallback = true }) end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   pattern = { "*.py", "*.c", "*.cpp", "*.hpp" },
+--   callback = function() require("conform").format({ async = false, lsp_fallback = true }) end,
+-- })

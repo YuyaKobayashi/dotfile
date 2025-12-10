@@ -135,6 +135,11 @@ find home_dir/ -maxdepth 1 | grep -Ev '^home_dir/$' | xargs -n16 -IXXX cp -a XXX
 ln_platform_wise $HOME/.local/bin/nvim \
   $HOME/.local/bin/nvim-linux-*.appimage
 
+# Install packages
+for install_script in $(find packages/ -type f -name INSTALL.sh); do
+  bash $install_script
+done
+
 
 # for bash
 user_bashrc=${HOME}/.bashrc

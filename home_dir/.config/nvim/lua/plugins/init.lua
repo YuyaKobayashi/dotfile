@@ -20,13 +20,11 @@ return {
   { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
   { "nvim-lualine/lualine.nvim" },
   { "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
-  { "folke/lsp-status.nvim" },
   { "folke/which-key.nvim" },
 
   -- LSP UI 改善（任意）
   { "nvimdev/lspsaga.nvim" },
   { "j-hui/fidget.nvim", tag = "legacy" },
-  { "folke/lsp-status.nvim" },
 
   -- コードフォーマット
   { "stevearc/conform.nvim" },

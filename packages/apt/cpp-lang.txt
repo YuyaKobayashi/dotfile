@@ -1,0 +1,5 @@
+cmake
+clang-format
+clang-tidy
+g++
+make

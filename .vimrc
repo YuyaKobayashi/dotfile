@@ -1,3 +1,7 @@
+if has('nvim')
+	finish
+endif
+
 " NOTE: tantatively turn filetype off.
 "	(see :https://stackoverflow.com/questions/17630393/filetype-on-or-filetype-off)
 filetype off

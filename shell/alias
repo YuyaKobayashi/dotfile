@@ -8,7 +8,9 @@ alias mk="make"
 alias l=ls
 alias gf="git flow"
 alias gff="git flow feature"
-alias vi=vim
+alias nv=nvim
+alias vim=nvim
+alias vi=nvim
 alias v=vim
 
 # add options
