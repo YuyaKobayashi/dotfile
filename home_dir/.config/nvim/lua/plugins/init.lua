@@ -28,4 +28,26 @@ return {
 
   -- コードフォーマット
   { "stevearc/conform.nvim" },
+
+  -- Signature Help
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("lsp_signature").setup({
+        bind = true,
+        hint_enable = false,           -- 仮想テキストヒントをオフ（好みで）
+        floating_window = true,        -- ポップアップで表示
+        floating_window_above_cur_line = true,
+        floating_window_off_x = 0,
+        floating_window_off_y = 0,
+        transparency = 0,
+        max_height = 12,
+        max_width = 80,
+        zindex = 50,
+        -- 括弧やカンマで自動トリガ
+        toggle_key = "<M-s>",          -- 必要ならトグル
+      })
+    end,
+  }
 }
