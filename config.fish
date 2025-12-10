@@ -38,15 +38,6 @@ else
 	echo source $script_dir/.vimrc >$default_vimrc 
 end
 set -e default_vimrc
-#
-# Initialization for .vimrc
-set default_nvim_init "$HOME/.config/nvim/init.vim"
-if [ -f "$default_nvim_init" ]
-else
-	mkdir -p (dirname $default_nvim_init)
-	echo source $script_dir/.vimrc >$default_nvim_init 
-end
-set -e default_vimrc
 
 # export 
 cat $script_dir/shell/export | while read key val

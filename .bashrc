@@ -30,17 +30,6 @@ _EOS_
 fi
 unset default_vimrc
 
-# Initialization for nvim
-default_nvim_init="$HOME/.config/nvim/init.vim"
-if [[ -f "$default_vimrc" ]]; then
-	:
-else
-	if [[ -n "$(command -v nvim)" ]]; then
-		mkdir -p $(dirname $default_nvim_init)
-		echo source $script_dir/.vimrc >$default_nvim_init
-	fi
-fi
-
 # export 
 cat $script_dir/shell/export | while read key val; do
 	eval export ${key}=$val
