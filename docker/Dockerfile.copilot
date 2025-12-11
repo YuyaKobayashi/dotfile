@@ -1,0 +1,50 @@
+# ベースイメージ（Node.js 18＋npm）
+FROM node:22-bullseye
+
+# 必要なパッケージ（git, curl, less 等）
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    curl \
+    ca-certificates \
+    less \
+    openssh-client \
+    vim \
+ && rm -rf /var/lib/apt/lists/*
+
+# Copilot CLI をグローバルインストール
+# 公式パッケージ名: @githubnext/cli
+#RUN npm install -g @githubnext/cli
+RUN npm install -g copilot
+
+# 非rootユーザーの作成（100ユーザー分: 1000-1099）
+ARG USER_ID=1000
+ARG GROUP_ID=1000
+
+# グループを作成（1000-1099）
+RUN for gid in $(seq 1000 1099); do \
+        groupadd -g ${gid} copilot${gid} || true; \
+    done
+
+# ユーザーを作成（1000-1099）
+RUN for uid in $(seq 1000 1099); do \
+        useradd -m -u ${uid} -g ${uid} -s /bin/bash copilot${uid} || true; \
+    done
+
+# デフォルトユーザーのシンボリックリンク
+RUN ln -s /home/copilot${USER_ID} /home/copilot
+
+# 作業ディレクトリ
+WORKDIR /workspace
+
+# ワークスペースの所有権を変更
+RUN chown -R ${USER_ID}:${GROUP_ID} /workspace
+
+# 環境変数（ロケールなど必要に応じて設定）
+ENV LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8
+
+# 非rootユーザーに切り替え
+USER ${USER_ID}:${GROUP_ID}
+
+# 利便性のため bash をデフォルトに
+CMD ["bash"]
