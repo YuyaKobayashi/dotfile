@@ -55,3 +55,6 @@ vim.opt.wildmode = { "list:longest", "list" }
 
 -- 非表示バッファを許可（未保存でも他バッファへ移動可能）
 vim.opt.hidden = true
+
+-- Show signcolumn always
+vim.opt.signcolumn = "yes"
