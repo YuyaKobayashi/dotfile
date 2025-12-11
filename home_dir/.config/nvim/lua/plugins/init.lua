@@ -49,5 +49,8 @@ return {
         toggle_key = "<M-s>",          -- 必要ならトグル
       })
     end,
-  }
+  },
+
+  -- Github Co-piilot
+  { "github/copilot.vim" },
 }
