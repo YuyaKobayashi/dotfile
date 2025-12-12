@@ -1,6 +1,7 @@
 -- ~/.config/nvim/init.lua
 -- init.lua の先頭付近で設定（マップ定義より前に）
 vim.g.mapleader = " "     -- スペースを <leader> に
+vim.g.semantic_tokens = false -- Disable semantic token
 require("config.vim")
 
 -- lazy.nvim bootstrap
