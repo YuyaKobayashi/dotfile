@@ -25,3 +25,4 @@ require("config.treesitter")
 require("config.format")
 require("config.telescope")
 
+vim.api.nvim_set_hl(0, 'LineNr', { fg = '#007f00', bg = 'NONE' })
