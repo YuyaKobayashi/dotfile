@@ -113,10 +113,14 @@ ln_platform_wise() {
     return 5
   fi
 
-  if [ -L "$LINK_TARGET" ] || [ -e "$LINK_TARGET" ]; then
-    rm -f -- "$LINK_TARGET"
+  if [ -e "$LINK_TARGET" ]; then
+      :
+  else
+      if [ -L "$LINK_TARGET" ]; then
+        rm -f -- "$LINK_TARGET"
+      fi
+      ln -is -- "$selected" "$LINK_TARGET"
   fi
-  ln -is -- "$selected" "$LINK_TARGET"
 
   # Display information
   if command -v file >/dev/null 2>&1; then
