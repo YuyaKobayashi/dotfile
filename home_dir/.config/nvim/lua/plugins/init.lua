@@ -29,6 +29,9 @@ return {
   -- コードフォーマット
   { "stevearc/conform.nvim" },
 
+  -- Git
+  { "sindrets/diffview.nvim" },
+
   -- Signature Help
   {
     "ray-x/lsp_signature.nvim",
