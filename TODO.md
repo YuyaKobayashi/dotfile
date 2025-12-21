@@ -1,0 +1,5 @@
+- Modify installation script to install:
+  - fd-find
+  - eza
+  - zoxide
+- Change alias by existance of destination command
