@@ -32,6 +32,7 @@ return {
   -- Git
   { "sindrets/diffview.nvim" },
   { "NeogitOrg/neogit" },
+  { "tpope/vim-fugitive" },
 
   -- Signature Help
   {
