@@ -5,13 +5,10 @@ alias g="git"
 alias gi="git"
 alias m="make"
 alias mk="make"
-alias l=ls
 alias gf="git flow"
 alias gff="git flow feature"
 alias nv=nvim
-alias vim=nvim
-alias vi=nvim
-alias v=vim
+alias l=ls
 
 # add options
 alias rm="rm -Ii"
@@ -19,10 +16,6 @@ alias mkdir="mkdir -p"
 alias df="df -h"
 alias du="du -h"
 alias free="free -h"
-alias la="ls -a"
-alias ll="ls -l"
-alias lla="ls -la"
-alias lll="lla"
 
 alias grep="grep --color=auto"
 alias fgrep='fgrep --color=auto'
@@ -37,3 +30,14 @@ alias .....="cd ../../../.."
 # typo
 alias sl=ls
 
+# Alter commands
+alias vim=nvim
+alias vi=nvim
+alias v=vim
+alias ei="eza --icons --git"
+alias ea="eza -la --icons --git"
+alias ee="eza -aahl --icons --git"
+alias et="eza -T -L3 -a -I '.git|.cache' --icons"
+alias ls=ei
+alias la=ea
+alias ll=ee

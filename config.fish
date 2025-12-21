@@ -6,13 +6,6 @@ set os (uname -s)
 # alias
 source $script_dir/shell/alias
 source $script_dir/shell/custom_cmds.fish
-switch "$os"
-case "Linux"
-	alias ls="ls -hF --color"
-case "Darwin" "FreeBSD"
-	alias ls="ls -hFG"
-end
-
 
 # Initialization for git
 if [ -n (command -s git) ]
