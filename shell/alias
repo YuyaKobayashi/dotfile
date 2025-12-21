@@ -41,3 +41,4 @@ alias et="eza -T -L3 -a -I '.git|.cache' --icons"
 alias ls=ei
 alias la=ea
 alias ll=ee
+alias cd=z

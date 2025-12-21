@@ -49,6 +49,9 @@ elif [[ "$os" == "Darwin" ]] || [[ "$os" == "FreeBSD" ]]; then
 	alias ls="ls -hFG"
 fi
 
+# Enable zoxide
+eval "$(zoxide init bash)"
+
 # shell options
 shopt -s autocd # no need to input 'cd'
 shopt -s cdspell # do 'cd' successfully even if one character in given destination path name is wrong

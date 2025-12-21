@@ -55,6 +55,9 @@ end
 set -e script_dir
 set -e os
 
+# Enable zoxide
+zoxide init fish | source
+
 
 # fish prompt
 set normal (set_color normal)
