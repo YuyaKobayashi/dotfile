@@ -31,6 +31,7 @@ return {
 
   -- Git
   { "sindrets/diffview.nvim" },
+  { "NeogitOrg/neogit" },
 
   -- Signature Help
   {
