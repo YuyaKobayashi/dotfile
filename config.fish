@@ -55,10 +55,6 @@ end
 set -e script_dir
 set -e os
 
-# Enable zoxide
-zoxide init fish | source
-
-
 # fish prompt
 set normal (set_color normal)
 set magenta (set_color magenta)
@@ -97,5 +93,10 @@ function fish_prompt
 
 	set_color normal
 end
+
+# Enable binaries from cargo: zoxide, starship
+source $HOME/.cargo/env.fish
+zoxide init fish | source
+starship init fish | source
 
 cd $old_cwd
