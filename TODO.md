@@ -1,6 +1,2 @@
-- Modify installation script to install:
-  - fd-find
-  - eza
-  - zoxide
-  - starship 1.0.0
 - Change alias by existance of destination command
+- Check nix on new user
