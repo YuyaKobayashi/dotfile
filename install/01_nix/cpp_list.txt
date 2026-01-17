@@ -1,0 +1,4 @@
+cmake
+clang
+clang-tools
+gnumake

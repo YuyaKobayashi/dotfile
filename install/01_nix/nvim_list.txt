@@ -1,0 +1,7 @@
+ripgrep
+fd
+git
+ruff
+pyright
+black
+tree-sitter

@@ -1,0 +1,13 @@
+tmux
+python3
+neovim
+silver-searcher
+git
+git-lfs
+zoxide
+eza
+fd
+ripgrep
+starship
+htop
+btop

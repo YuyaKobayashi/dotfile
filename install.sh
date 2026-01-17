@@ -13,8 +13,11 @@ script_dir=$(cd $(dirname $BASH_SOURCE); pwd)
 # Copy Home directory files
 find home_dir/ -maxdepth 1 | grep -Ev '^home_dir/$' | xargs -n16 -IXXX cp -a XXX $HOME/
 
-# Install nix
-sudo sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon
+
+# Run install scripts
+for install_d in $(echo $script_dir/install/*/ | sort -n); do
+    bash -x $install_d/main.sh
+done
 
 
 # for bash
