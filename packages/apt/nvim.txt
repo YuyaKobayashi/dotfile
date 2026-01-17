@@ -1,6 +1,0 @@
-clang
-clangd
-clang-format
-ripgrep
-fd-find
-luarocks
