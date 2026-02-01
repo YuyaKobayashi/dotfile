@@ -3,10 +3,6 @@ set old_cwd (pwd)
 set script_dir (cd (dirname (status -f)); pwd)
 set os (uname -s)
 
-# alias
-source $script_dir/shell/alias
-source $script_dir/shell/custom_cmds.fish
-
 # Initialization for git
 if [ -n (command -s git) ]
 	function set_undefined_gitconfig
@@ -51,9 +47,30 @@ if [ -f "$script_dir/shell/local_export" ]
     end
 end
 
+# Enable binaries from cargo: zoxide, starship
+source $HOME/.cargo/env.fish
+zoxide init fish | source
+starship init fish | source
+
+# alias
+source $script_dir/shell/custom_cmds.fish
+cat $script_dir/shell/alias | while read line
+    set match (string match -r 'alias ([^=]+)=(.+)' $line)
+    if test (count $match) -eq 3
+        # Check command existance and eval only if exists
+        set src_vargs (string match -r '["\']?([^ "\']+)( .+)*["\']?' $match[3])
+        if type -q $src_vargs[2]
+            eval $line
+        else
+            echo "[WARINING] $src_vargs[2] does not exist, skipping (alias $match[2]=$match[3])" >&2
+        end
+    end
+end
+
 
 set -e script_dir
 set -e os
+
 
 # fish prompt
 set normal (set_color normal)
@@ -94,9 +111,5 @@ function fish_prompt
 	set_color normal
 end
 
-# Enable binaries from cargo: zoxide, starship
-source $HOME/.cargo/env.fish
-zoxide init fish | source
-starship init fish | source
 
 cd $old_cwd
